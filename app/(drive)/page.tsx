@@ -49,7 +49,7 @@ export default function BerandaPage() {
   const storagePercentage = 65;
 
   return (
-    <div className="min-h-screen bg-white text-black p-6 sm:p-8">
+    <div className="min-h-screen text-black p-6 sm:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <header className="mb-12">
