@@ -1150,77 +1150,69 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$ContextM
 function BerandaPage() {
     const { viewMode } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$ViewContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useView"])();
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
-    // State untuk modal
     const [selectedFile, setSelectedFile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isModalOpen, setIsModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // State untuk context menu
-    const [contextMenu, setContextMenu] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        isOpen: false,
-        position: {
-            x: 0,
-            y: 0
-        },
-        file: null
-    });
-    const folders = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["filesData"].filter((item)=>item.type === 'folder');
-    const files = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["filesData"].filter((item)=>item.type === 'file');
+    const [contextMenu, setContextMenu] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    // Pisahkan data untuk file dan folder
+    const folders = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["filesData"].filter((item)=>item.type === "folder");
+    const files = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["filesData"].filter((item)=>item.type === "file");
     const hasContent = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["filesData"].length > 0;
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const timer = setTimeout(()=>setIsLoading(false), 1500);
         return ()=>clearTimeout(timer);
     }, []);
-    // Handler untuk klik kiri
+    // Handler untuk klik file
     const handleFileClick = (file)=>{
-        if (file.type === 'file') {
+        if (file.type === "file") {
             setSelectedFile(file);
             setIsModalOpen(true);
         } else {
-            alert(`Membuka folder: ${file.name}`);
+            // Menghindari penggunaan `alert` untuk pengalaman pengguna yang lebih baik
+            console.log(`Membuka folder: ${file.name}`);
         }
     };
+    // Handler untuk menutup modal
     const handleCloseModal = ()=>{
         setIsModalOpen(false);
         setTimeout(()=>setSelectedFile(null), 300);
     };
-    // Handler untuk klik kanan
+    // Handler untuk event context menu
     const handleFileContextMenu = (event, file)=>{
         event.preventDefault();
         setContextMenu({
-            isOpen: true,
             position: {
                 x: event.pageX,
                 y: event.pageY
             },
-            file: file
+            file
         });
     };
+    // Handler untuk menutup context menu
     const handleCloseContextMenu = ()=>{
-        setContextMenu((prev)=>({
-                ...prev,
-                isOpen: false
-            }));
+        setContextMenu(null);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         onClick: handleCloseContextMenu,
+        onContextMenu: handleCloseContextMenu,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "text-3xl font-bold",
                 children: "Beranda"
             }, void 0, false, {
                 fileName: "[project]/app/(drive)/page.tsx",
-                lineNumber: 66,
+                lineNumber: 67,
                 columnNumber: 7
             }, this),
             !hasContent && !isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-8",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$EmptyState$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmptyState"], {}, void 0, false, {
                     fileName: "[project]/app/(drive)/page.tsx",
-                    lineNumber: 69,
-                    columnNumber: 31
+                    lineNumber: 71,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(drive)/page.tsx",
-                lineNumber: 69,
+                lineNumber: 70,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
@@ -1233,7 +1225,7 @@ function BerandaPage() {
                         onFileContextMenu: handleFileContextMenu
                     }, void 0, false, {
                         fileName: "[project]/app/(drive)/page.tsx",
-                        lineNumber: 72,
+                        lineNumber: 75,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$FileAccess$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FileDisplay"], {
@@ -1245,7 +1237,7 @@ function BerandaPage() {
                         onFileContextMenu: handleFileContextMenu
                     }, void 0, false, {
                         fileName: "[project]/app/(drive)/page.tsx",
-                        lineNumber: 80,
+                        lineNumber: 83,
                         columnNumber: 11
                     }, this)
                 ]
@@ -1256,23 +1248,23 @@ function BerandaPage() {
                 file: selectedFile
             }, void 0, false, {
                 fileName: "[project]/app/(drive)/page.tsx",
-                lineNumber: 91,
+                lineNumber: 94,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$ContextMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ContextMenu"], {
-                isOpen: contextMenu.isOpen,
+            contextMenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$ContextMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ContextMenu"], {
+                isOpen: true,
                 onClose: handleCloseContextMenu,
                 position: contextMenu.position,
                 file: contextMenu.file
             }, void 0, false, {
                 fileName: "[project]/app/(drive)/page.tsx",
-                lineNumber: 96,
-                columnNumber: 7
+                lineNumber: 100,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(drive)/page.tsx",
-        lineNumber: 65,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
