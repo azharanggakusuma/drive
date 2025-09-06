@@ -11,9 +11,9 @@
 }
 
 :root {
-  --background: #0f172a;
+  --background: #1e293b;       
   --foreground: #f8fafc;
-  --sidebar-bg: #1e293b;
+  --sidebar-bg: #273449;       
   --border-color: #334155;
   --primary-color: #3b82f6;
   --primary-hover: #2563eb;
@@ -22,6 +22,8 @@
   --success-color: #22c55e;
   --danger-color: #ef4444;
   --warning-color: #f59e0b;
+  --muted-bg: #2e3b50;
+  --card-bg: #263041;
 }
 
 @media (prefers-color-scheme: light) {

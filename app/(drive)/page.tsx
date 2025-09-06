@@ -49,20 +49,20 @@ export default function BerandaPage() {
   const storagePercentage = 65;
 
   return (
-    <div className="min-h-screen text-black p-6 sm:p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen text-black p-4 sm:p-6 md:p-8">
+      <div className="mx-auto">
         {/* Header */}
-        <header className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <header className="mb-10">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Dasbor
           </h1>
-          <p className="text-gray-700 mt-2">
+          <p className="text-gray-700 mt-2 text-sm sm:text-base">
             Ringkasan aktivitas dan statistik akun Anda.
           </p>
         </header>
 
         {/* Statistik */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <StatCard
             icon={<File size={22} />}
             label="Total File"
@@ -90,14 +90,14 @@ export default function BerandaPage() {
         </div>
 
         {/* Penyimpanan & Aktivitas */}
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Visualisasi Penyimpanan */}
-          <div className="lg:col-span-2 bg-white border border-gray-200 p-8 rounded-2xl shadow-md">
+          <div className="lg:col-span-2 bg-white border border-gray-200 p-6 sm:p-8 rounded-2xl shadow-md">
             <h2 className="text-xl font-semibold mb-6">
               Penggunaan Penyimpanan
             </h2>
-            <div className="flex items-center gap-6">
-              <div className="relative w-32 h-32">
+            <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+              <div className="relative w-28 h-28 md:w-32 md:h-32 flex-shrink-0">
                 <svg className="w-full h-full" viewBox="0 0 36 36">
                   <path
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -116,14 +116,14 @@ export default function BerandaPage() {
                   />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <p className="text-3xl font-bold text-black">
+                  <p className="text-2xl md:text-3xl font-bold text-black">
                     {storagePercentage}%
                   </p>
                   <p className="text-xs text-gray-500">terpakai</p>
                 </div>
               </div>
               <div className="flex-1">
-                <p className="text-gray-700 text-lg">
+                <p className="text-gray-700 text-base md:text-lg">
                   Anda telah menggunakan{" "}
                   <span className="font-bold text-black">12.3 GB</span> dari{" "}
                   <span className="font-bold text-black">20 GB</span>.
@@ -136,12 +136,12 @@ export default function BerandaPage() {
           </div>
 
           {/* Aktivitas Terkini */}
-          <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-md">
+          <div className="bg-white border border-gray-200 p-6 sm:p-8 rounded-2xl shadow-md">
             <h2 className="text-xl font-semibold mb-6">Aktivitas Terkini</h2>
             <ul className="space-y-5">
               {recentActivities.map((activity, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="mt-1 mr-4">{activity.icon}</div>
+                  <div className="mt-1 mr-4 flex-shrink-0">{activity.icon}</div>
                   <div>
                     <p className="text-sm text-gray-800">{activity.text}</p>
                     <p className="text-xs text-gray-500 mt-0.5">
