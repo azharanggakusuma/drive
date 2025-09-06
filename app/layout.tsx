@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MyDrive",
+  title: "CloudDrive",
   description: "Your personal cloud storage",
 };
 
