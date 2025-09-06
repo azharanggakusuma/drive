@@ -66,7 +66,7 @@ export const Sidebar = () => {
     return (
         <div className="w-64 h-full bg-white dark:bg-gray-900/50 p-6 flex flex-col justify-between border-r border-gray-200 dark:border-gray-800">
             <div>
-                <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-500 mb-12 block" onClick={handleLogoClick}>MyDrive</Link>
+                <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-500 mb-12 block" onClick={handleLogoClick}>CloudDrive</Link>
                 <nav className="flex flex-col gap-2">
                     <NavItem href="/" icon={<Home size={20} />} label="Beranda" />
                     <NavItem href="/files" icon={<Folder size={20} />} label="File Saya" />

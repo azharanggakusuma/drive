@@ -140,7 +140,7 @@ const Sidebar = ()=>{
                         href: "/",
                         className: "text-2xl font-bold text-blue-600 dark:text-blue-500 mb-12 block",
                         onClick: handleLogoClick,
-                        children: "MyDrive"
+                        children: "CloudDrive"
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 69,
