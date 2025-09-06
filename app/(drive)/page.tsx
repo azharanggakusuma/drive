@@ -1,104 +1,153 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { filesData, type FileItem } from "@/lib/data";
-import { FileDisplay } from "@/components/ui/FileAccess";
-import { EmptyState } from "@/components/ui/EmptyState";
-import { useView } from "@/context/ViewContext";
-import { FileActionModal } from "@/components/ui/FileActionModal";
-import { ContextMenu } from "@/components/ui/ContextMenu";
+import React from "react";
+import { 
+  File, 
+  Folder, 
+  HardDrive, 
+  Share2, 
+  ArrowUpRight, 
+  Clock, 
+  Download, 
+  Plus 
+} from "lucide-react";
+
+// Data Dummy untuk Aktivitas Terkini
+const recentActivities = [
+  {
+    icon: <Download size={16} className="text-green-400" />,
+    text: "Dokumen_Laporan.pdf berhasil diunduh.",
+    time: "Baru saja",
+  },
+  {
+    icon: <Share2 size={16} className="text-purple-400" />,
+    text: "Anda membagikan folder 'Project Alpha' ke tim.",
+    time: "2 menit yang lalu",
+  },
+  {
+    icon: <Plus size={16} className="text-blue-400" />,
+    text: "5 file baru ditambahkan ke 'Materi Desain'.",
+    time: "1 jam yang lalu",
+  },
+];
+
+// Komponen Kartu Statistik dengan efek Glassmorphism
+const StatCard = ({ icon, label, value, gradient }) => (
+  <div className="relative backdrop-blur-md bg-white/10 border border-white/20 p-6 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:bg-white/20 hover:-translate-y-1">
+    <div className={`absolute top-0 right-0 h-20 w-20 ${gradient} rounded-full -mr-8 -mt-8 opacity-20`}></div>
+    <div className="flex justify-between items-start">
+      <div className="text-white">{icon}</div>
+    </div>
+    <div className="mt-4">
+      <p className="text-3xl lg:text-4xl font-bold text-white">{value}</p>
+      <p className="text-sm text-gray-300 font-medium mt-1">{label}</p>
+    </div>
+  </div>
+);
 
 export default function BerandaPage() {
-  const { viewMode } = useView();
-  const [isLoading, setIsLoading] = useState(true);
-  
-  // State untuk modal
-  const [selectedFile, setSelectedFile] = useState<FileItem | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // State untuk context menu
-  const [contextMenu, setContextMenu] = useState<{
-    isOpen: boolean;
-    position: { x: number, y: number };
-    file: FileItem | null;
-  }>({ isOpen: false, position: { x: 0, y: 0 }, file: null });
-
-  const folders = filesData.filter(item => item.type === 'folder');
-  const files = filesData.filter(item => item.type === 'file');
-  const hasContent = filesData.length > 0;
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Handler untuk klik kiri
-  const handleFileClick = (file: FileItem) => {
-    if (file.type === 'file') {
-      setSelectedFile(file);
-      setIsModalOpen(true);
-    } else {
-      alert(`Membuka folder: ${file.name}`);
-    }
-  };
-  
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setTimeout(() => setSelectedFile(null), 300);
-  };
-  
-  // Handler untuk klik kanan
-  const handleFileContextMenu = (event: React.MouseEvent, file: FileItem) => {
-    event.preventDefault();
-    setContextMenu({
-      isOpen: true,
-      position: { x: event.pageX, y: event.pageY },
-      file: file,
-    });
-  };
-
-  const handleCloseContextMenu = () => {
-    setContextMenu(prev => ({ ...prev, isOpen: false }));
-  };
+  const storagePercentage = 65;
 
   return (
-    <div onClick={handleCloseContextMenu}>
-      <h1 className="text-3xl font-bold">Beranda</h1>
-      
-      {!hasContent && !isLoading ? (
-        <div className="mt-8"><EmptyState /></div>
-      ) : (
-        <>
-          <FileDisplay 
-            title="Folder"
-            items={folders}
-            viewMode={viewMode}
-            isLoading={isLoading}
-            onFileClick={handleFileClick}
-            onFileContextMenu={handleFileContextMenu}
-          />
-          <FileDisplay
-            title="File"
-            items={files}
-            viewMode={viewMode}
-            isLoading={isLoading}
-            onFileClick={handleFileClick}
-            onFileContextMenu={handleFileContextMenu}
-          />
-        </>
-      )}
+    <div className="min-h-screen p-6 sm:p-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <header className="mb-12">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">Dasbor</h1>
+          <p className="text-gray-400 mt-2">Ringkasan aktivitas dan statistik akun Anda.</p>
+        </header>
 
-      <FileActionModal 
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        file={selectedFile}
-      />
-      <ContextMenu 
-        isOpen={contextMenu.isOpen}
-        onClose={handleCloseContextMenu}
-        position={contextMenu.position}
-        file={contextMenu.file}
-      />
+        {/* Grid Statistik Utama */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard 
+            icon={<File size={22} />} 
+            label="Total File" 
+            value="1,234" 
+            gradient="bg-gradient-to-br from-blue-500 to-cyan-400" 
+          />
+          <StatCard 
+            icon={<Folder size={22} />} 
+            label="Total Folder" 
+            value="56" 
+            gradient="bg-gradient-to-br from-green-500 to-emerald-400"
+          />
+          <StatCard 
+            icon={<Share2 size={22} />} 
+            label="File Dibagikan" 
+            value="78" 
+            gradient="bg-gradient-to-br from-purple-500 to-indigo-400"
+          />
+          <StatCard 
+            icon={<HardDrive size={22} />} 
+            label="Penyimpanan Terpakai" 
+            value="12.3 GB" 
+            gradient="bg-gradient-to-br from-yellow-500 to-orange-400"
+          />
+        </div>
+        
+        {/* Bagian Penggunaan Penyimpanan dan Aktivitas */}
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Visualisasi Penyimpanan */}
+          <div className="lg:col-span-2 backdrop-blur-md bg-white/10 border border-white/20 p-8 rounded-2xl shadow-lg">
+            <h2 className="text-xl font-semibold text-white mb-6">Penggunaan Penyimpanan</h2>
+            <div className="flex items-center gap-6">
+              {/* Radial Progress Bar */}
+              <div className="relative w-32 h-32">
+                <svg className="w-full h-full" viewBox="0 0 36 36">
+                  <path
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                    className="text-gray-700"
+                    fill="none"
+                    strokeWidth="3"
+                  />
+                  <path
+                    className="text-blue-500"
+                    strokeDasharray={`${storagePercentage}, 100`}
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                    fill="none"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    transform="rotate(90 18 18)"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <p className="text-3xl font-bold text-white">{storagePercentage}%</p>
+                  <p className="text-xs text-gray-400">terpakai</p>
+                </div>
+              </div>
+              <div className="flex-1">
+                <p className="text-gray-300 text-lg">
+                  Anda telah menggunakan <span className="font-bold text-white">12.3 GB</span> dari{" "}
+                  <span className="font-bold text-white">20 GB</span>.
+                </p>
+                 <button className="mt-4 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-lg transition-colors">
+                    Upgrade Penyimpanan
+                  </button>
+              </div>
+            </div>
+          </div>
+          
+          {/* Aktivitas Terkini */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 p-8 rounded-2xl shadow-lg">
+             <h2 className="text-xl font-semibold text-white mb-6">Aktivitas Terkini</h2>
+             <ul className="space-y-5">
+              {recentActivities.map((activity, index) => (
+                <li key={index} className="flex items-start">
+                  <div className="mt-1 mr-4">{activity.icon}</div>
+                  <div>
+                    <p className="text-sm text-gray-200">{activity.text}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{activity.time}</p>
+                  </div>
+                </li>
+              ))}
+             </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
