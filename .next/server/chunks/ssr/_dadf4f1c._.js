@@ -45,13 +45,13 @@ const NavItem = ({ href, icon, label })=>{
             }, void 0, false, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 40,
-                columnNumber: 9
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/ui/Sidebar.tsx",
         lineNumber: 38,
-        columnNumber: 7
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
 const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -66,7 +66,7 @@ const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 48,
-                        columnNumber: 13
+                        columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "font-semibold text-sm",
@@ -74,13 +74,13 @@ const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 49,
-                        columnNumber: 13
+                        columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 47,
-                columnNumber: 9
+                columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mb-2",
@@ -92,12 +92,12 @@ const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
                 }, void 0, false, {
                     fileName: "[project]/components/ui/Sidebar.tsx",
                     lineNumber: 52,
-                    columnNumber: 13
+                    columnNumber: 7
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 51,
-                columnNumber: 9
+                columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "text-xs text-gray-500 dark:text-gray-400",
@@ -105,13 +105,13 @@ const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
             }, void 0, false, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 54,
-                columnNumber: 9
+                columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/ui/Sidebar.tsx",
         lineNumber: 46,
-        columnNumber: 5
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const Sidebar = ()=>{
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["usePathname"])();
@@ -133,7 +133,7 @@ const Sidebar = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 69,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                         className: "flex flex-col gap-2",
@@ -145,13 +145,13 @@ const Sidebar = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/Sidebar.tsx",
                                     lineNumber: 71,
-                                    columnNumber: 45
+                                    columnNumber: 35
                                 }, void 0),
                                 label: "Beranda"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/Sidebar.tsx",
                                 lineNumber: 71,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
                                 href: "/files",
@@ -160,13 +160,13 @@ const Sidebar = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/Sidebar.tsx",
                                     lineNumber: 72,
-                                    columnNumber: 50
+                                    columnNumber: 40
                                 }, void 0),
                                 label: "File Saya"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/Sidebar.tsx",
                                 lineNumber: 72,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
                                 href: "/shared",
@@ -175,13 +175,13 @@ const Sidebar = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/Sidebar.tsx",
                                     lineNumber: 73,
-                                    columnNumber: 51
+                                    columnNumber: 41
                                 }, void 0),
                                 label: "Dibagikan"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/Sidebar.tsx",
                                 lineNumber: 73,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
                                 href: "/recent",
@@ -190,13 +190,13 @@ const Sidebar = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/Sidebar.tsx",
                                     lineNumber: 74,
-                                    columnNumber: 51
+                                    columnNumber: 41
                                 }, void 0),
                                 label: "Terbaru"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/Sidebar.tsx",
                                 lineNumber: 74,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
                                 href: "/starred",
@@ -205,13 +205,13 @@ const Sidebar = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/Sidebar.tsx",
                                     lineNumber: 75,
-                                    columnNumber: 52
+                                    columnNumber: 42
                                 }, void 0),
                                 label: "Berbintang"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/Sidebar.tsx",
                                 lineNumber: 75,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
                                 href: "/trash",
@@ -220,30 +220,30 @@ const Sidebar = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/Sidebar.tsx",
                                     lineNumber: 76,
-                                    columnNumber: 50
+                                    columnNumber: 40
                                 }, void 0),
                                 label: "Sampah"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/Sidebar.tsx",
                                 lineNumber: 76,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 70,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StorageStatus, {}, void 0, false, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 78,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 68,
-                columnNumber: 13
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
@@ -253,24 +253,24 @@ const Sidebar = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Sidebar.tsx",
                         lineNumber: 81,
-                        columnNumber: 49
+                        columnNumber: 41
                     }, void 0),
                     label: "Pengaturan"
                 }, void 0, false, {
                     fileName: "[project]/components/ui/Sidebar.tsx",
                     lineNumber: 81,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 80,
-                columnNumber: 13
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/ui/Sidebar.tsx",
         lineNumber: 67,
-        columnNumber: 9
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
 }),
@@ -419,12 +419,12 @@ const Header = ({ onMenuClick })=>{
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/Header.tsx",
                                             lineNumber: 38,
-                                            columnNumber: 19
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/Header.tsx",
                                         lineNumber: 37,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>setViewMode('list'),
@@ -434,12 +434,12 @@ const Header = ({ onMenuClick })=>{
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/Header.tsx",
                                             lineNumber: 41,
-                                            columnNumber: 19
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/Header.tsx",
                                         lineNumber: 40,
-                                        columnNumber: 15
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
@@ -476,12 +476,12 @@ const Header = ({ onMenuClick })=>{
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Header.tsx",
                         lineNumber: 50,
-                        columnNumber: 15
+                        columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/ui/Header.tsx",
                     lineNumber: 49,
-                    columnNumber: 11
+                    columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/ui/Header.tsx",

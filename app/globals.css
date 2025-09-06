@@ -3,38 +3,38 @@
 
 /* Kustomisasi warna bar progres (opsional) */
 #nprogress .bar {
-  background: #007bff !important; /* Warna biru primer */
+  background: #3b82f6 !important; /* Warna biru primer baru */
   height: 3px !important;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #007bff !important;
-  border-left-color: #007bff !important;
+  border-top-color: #3b82f6 !important;
+  border-left-color: #3b82f6 !important;
 }
 
 :root {
-  --background: #f8f9fa;
-  --foreground: #212529;
+  --background: #f8fafc;
+  --foreground: #0f172a;
   --sidebar-bg: #ffffff;
-  --border-color: #dee2e6;
-  --primary-color: #007bff;
-  --primary-hover: #0056b3;
+  --border-color: #e2e8f0;
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
   --primary-text: #ffffff;
-  --secondary-text: #6c757d;
-  --success-color: #28a745;
-  --danger-color: #dc3545;
-  --warning-color: #ffc107;
+  --secondary-text: #64748b;
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #121212;
-    --foreground: #e9ecef;
-    --sidebar-bg: #1e1e1e;
-    --border-color: #343a40;
-    --primary-color: #0d6efd;
-    --primary-hover: #0a58ca;
-    --secondary-text: #adb5bd;
+    --background: #020617;
+    --foreground: #f8fafc;
+    --sidebar-bg: #0f172a;
+    --border-color: #1e293b;
+    --primary-color: #3b82f6;
+    --primary-hover: #60a5fa;
+    --secondary-text: #94a3b8;
   }
 }
 
@@ -46,7 +46,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-geist-sans), sans-serif;
   font-weight: 600;
 }

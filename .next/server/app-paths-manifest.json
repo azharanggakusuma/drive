@@ -1,4 +1,7 @@
 {
+  "/(drive)/files/page": "app/(drive)/files/page.js",
   "/(drive)/page": "app/(drive)/page.js",
+  "/(drive)/settings/page": "app/(drive)/settings/page.js",
+  "/(drive)/shared/page": "app/(drive)/shared/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
