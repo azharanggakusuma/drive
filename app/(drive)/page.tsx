@@ -145,7 +145,7 @@ const StorageVisualizer = ({ percentage }: { percentage: number }) => (
       </div>
       <div className="flex-1 text-center md:text-left">
         <p className="text-base text-slate-600">
-          Anda telah menggunakan <span className="font-bold text-slate-900">512 GB</span> dari total{" "}
+          Anda telah menggunakan <span className="font-bold text-slate-900">900 GB</span> dari total{" "}
           <span className="font-bold text-slate-900">2 TB</span>.
         </p>
         <button className="mt-4 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all">
@@ -187,7 +187,7 @@ const FrequentlyAccessedFiles = ({ files }: { files: FrequentFile[] }) => (
 // --- MAIN PAGE COMPONENT ---
 export default function BerandaPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const storagePercentage = 25;
+  const storagePercentage = 45;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -235,7 +235,7 @@ export default function BerandaPage() {
               <StatCard icon={<File size={24} />} label="Total Berkas" value="1,234" gradient="bg-gradient-to-br from-blue-400 to-cyan-300" />
               <StatCard icon={<Folder size={24} />} label="Jumlah Direktori" value="56" gradient="bg-gradient-to-br from-green-400 to-emerald-300" />
               <StatCard icon={<Share2 size={24} />} label="Berkas Terbagi" value="78" gradient="bg-gradient-to-br from-purple-400 to-indigo-300" />
-              <StatCard icon={<HardDrive size={24} />} label="Kapasitas Tersisa" value="1.488 TB" gradient="bg-gradient-to-br from-yellow-400 to-orange-300" />
+              <StatCard icon={<HardDrive size={24} />} label="Kapasitas Tersisa" value="1.1 TB" gradient="bg-gradient-to-br from-yellow-400 to-orange-300" />
             </>
           )}
         </div>
