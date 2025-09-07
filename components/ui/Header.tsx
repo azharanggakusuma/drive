@@ -36,33 +36,6 @@ export const Header = ({ onMenuClick }: { onMenuClick: () => void }) => {
           <span className="text-sm font-semibold hidden lg:block">Baru</span>
         </button>
         
-        <div className="h-6 w-px bg-gray-200 dark:bg-gray-700 mx-1"></div>
-
-        <div className="hidden md:flex items-center bg-gray-100 dark:bg-gray-800 p-1 rounded-lg">
-          <button
-            onClick={() => setViewMode("list")}
-            className={`p-1.5 rounded-md ${
-              viewMode === "list"
-                ? "bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm"
-                : "text-gray-500 dark:text-gray-400"
-            } transition-all`}
-            title="Tampilan Daftar"
-          >
-            <List size={18} />
-          </button>
-          <button
-            onClick={() => setViewMode("grid")}
-            className={`p-1.5 rounded-md ${
-              viewMode === "grid"
-                ? "bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm"
-                : "text-gray-500 dark:text-gray-400"
-            } transition-all`}
-            title="Tampilan Kotak"
-          >
-            <Grid3x3 size={18} />
-          </button>
-        </div>
-        
         <button
           className="p-2.5 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 rounded-full transition-colors"
           title="Notifikasi"
