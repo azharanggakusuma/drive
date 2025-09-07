@@ -65,9 +65,9 @@ const StorageStatus = () => (
       <span className="font-semibold text-sm text-gray-700 dark:text-gray-300">Penyimpanan</span>
     </div>
     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-      <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: "45%" }}></div>
+      <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: "4%" }}></div>
     </div>
-    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">900 GB dari 2 TB telah digunakan</p>
+    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">75 GB dari 2 TB telah digunakan</p>
   </div>
 );
 

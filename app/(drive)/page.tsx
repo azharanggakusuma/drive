@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import {
   File,
   Folder,
@@ -33,26 +34,49 @@ interface FrequentFile {
 const dummyFrequentFiles: FrequentFile[] = [
   {
     id: 1,
-    icon: <Presentation size={20} className="text-orange-500" />,
-    name: "Presentasi Kinerja Kuartal 3.pptx",
-    size: "3.4 MB",
-    lastAccessed: "Baru saja, 10:30",
+    icon: <FileText size={20} className="text-red-500" />,
+    name: "KHS Semester 4.pdf",
+    size: "88 KB",
+    lastAccessed: "Minggu lalu",
   },
   {
     id: 2,
     icon: <FileText size={20} className="text-red-500" />,
-    name: "Laporan Penjualan Bulanan.pdf",
-    size: "1.2 MB",
-    lastAccessed: "Kemarin sore, 15:45",
+    name: "KHS Semester 5.pdf",
+    size: "92 KB",
+    lastAccessed: "Bulan lalu",
   },
   {
     id: 3,
-    icon: <FileSpreadsheet size={20} className="text-green-600" />,
-    name: "Analisis Keuangan Tahunan.xlsx",
-    size: "876 KB",
-    lastAccessed: "Jumat, 14:20",
+    icon: <FileText size={20} className="text-red-500" />,
+    name: "KHS Semester 6.pdf",
+    size: "85 KB",
+    lastAccessed: "2 bulan lalu",
   },
 ];
+
+// --- ANIMATION VARIANTS ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 // --- SKELETON COMPONENTS ---
 const SkeletonCard = () => (
@@ -96,7 +120,7 @@ const SkeletonFiles = () => (
 
 // --- UI COMPONENTS ---
 const StatCard: React.FC<StatCardProps> = ({ icon, label, value, gradient }) => (
-  <div className="relative bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group cursor-pointer">
+  <motion.div variants={itemVariants} className="relative bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group cursor-pointer">
     <div
       className={`absolute top-0 right-0 h-32 w-32 ${gradient} rounded-full -mr-16 -mt-16 opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500`}
     />
@@ -107,11 +131,11 @@ const StatCard: React.FC<StatCardProps> = ({ icon, label, value, gradient }) => 
         <p className="text-sm text-slate-600 font-medium mt-1">{label}</p>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 const StorageVisualizer = ({ percentage }: { percentage: number }) => (
-  <div className="h-full bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col">
+  <motion.div variants={itemVariants} className="h-full bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col">
     <h2 className="text-lg md:text-xl font-semibold mb-6 text-slate-800">Kapasitas Penyimpanan</h2>
     <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
       <div className="relative w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0">
@@ -128,9 +152,11 @@ const StorageVisualizer = ({ percentage }: { percentage: number }) => (
             fill="none"
             strokeWidth="3"
           />
-          <path
+          <motion.path
             stroke="url(#storageGradient)"
-            style={{ strokeDasharray: `${percentage}, 100`, transition: 'stroke-dasharray 1.5s ease-in-out' }}
+            initial={{ strokeDasharray: `0, 100` }}
+            animate={{ strokeDasharray: `${percentage}, 100` }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
             d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
             fill="none"
             strokeWidth="3.5"
@@ -145,7 +171,7 @@ const StorageVisualizer = ({ percentage }: { percentage: number }) => (
       </div>
       <div className="flex-1 text-center md:text-left">
         <p className="text-base text-slate-600">
-          Anda telah menggunakan <span className="font-bold text-slate-900">900 GB</span> dari total{" "}
+          Anda telah menggunakan <span className="font-bold text-slate-900">75 GB</span> dari total{" "}
           <span className="font-bold text-slate-900">2 TB</span>.
         </p>
         <button className="mt-4 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all">
@@ -153,20 +179,20 @@ const StorageVisualizer = ({ percentage }: { percentage: number }) => (
         </button>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 const FrequentlyAccessedFiles = ({ files }: { files: FrequentFile[] }) => (
-  <div className="h-full bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col">
+  <motion.div variants={itemVariants} className="h-full bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col">
     <div className="flex justify-between items-center mb-6">
       <h2 className="text-lg md:text-xl font-semibold text-slate-800">Akses Cepat Berkas</h2>
       <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center group flex-shrink-0">
         Tampilkan Semua <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
-    <ul className="space-y-2 flex-1">
-      {files.map((file, index) => (
-        <li key={file.id} className="flex items-center p-2.5 rounded-lg hover:bg-slate-100 transition-colors duration-200 opacity-0 group" style={{ animation: `fadeInUp 0.5s ease-out ${index * 0.1}s forwards` }}>
+    <motion.ul variants={containerVariants} initial="hidden" animate="visible" className="space-y-2 flex-1">
+      {files.map((file) => (
+        <motion.li key={file.id} variants={itemVariants} className="flex items-center p-2.5 rounded-lg hover:bg-slate-100 transition-colors duration-200 group">
           <div className="mr-4 flex-shrink-0 bg-slate-100 p-2.5 rounded-lg border border-slate-200">{file.icon}</div>
           <div className="flex-1 min-w-0">
             <p className="text-sm text-slate-800 font-semibold truncate">{file.name}</p>
@@ -178,16 +204,16 @@ const FrequentlyAccessedFiles = ({ files }: { files: FrequentFile[] }) => (
               <MoreHorizontal size={18} />
             </button>
           </div>
-        </li>
+        </motion.li>
       ))}
-    </ul>
-  </div>
+    </motion.ul>
+  </motion.div>
 );
 
 // --- MAIN PAGE COMPONENT ---
 export default function BerandaPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const storagePercentage = 45;
+  const storagePercentage = 4;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -207,48 +233,57 @@ export default function BerandaPage() {
         }}
       />
       <style jsx global>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
         @keyframes gradientAnimation {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
       `}</style>
-      <div className="max-w-7xl mx-auto">
-        <header className="mb-10">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Dasbor Utama
-          </h1>
-          <p className="text-base text-slate-600 mt-2">
-            Senang melihat Anda kembali, Azharangga Kusuma!
-          </p>
-        </header>
+      <motion.header 
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="mb-10"
+      >
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+          Dasbor Utama
+        </h1>
+        <p className="text-base text-slate-600 mt-2">
+          Senang melihat Anda kembali, Azharangga Kusuma!
+        </p>
+      </motion.header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          {isLoading ? (
-            <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
-          ) : (
-            <>
-              <StatCard icon={<File size={24} />} label="Total Berkas" value="1,234" gradient="bg-gradient-to-br from-blue-400 to-cyan-300" />
-              <StatCard icon={<Folder size={24} />} label="Jumlah Direktori" value="56" gradient="bg-gradient-to-br from-green-400 to-emerald-300" />
-              <StatCard icon={<Share2 size={24} />} label="Berkas Terbagi" value="78" gradient="bg-gradient-to-br from-purple-400 to-indigo-300" />
-              <StatCard icon={<HardDrive size={24} />} label="Kapasitas Tersisa" value="1.1 TB" gradient="bg-gradient-to-br from-yellow-400 to-orange-300" />
-            </>
-          )}
+      <motion.div 
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {isLoading ? (
+          <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
+        ) : (
+          <>
+            <StatCard icon={<File size={24} />} label="Total Berkas" value="152" gradient="bg-gradient-to-br from-blue-400 to-cyan-300" />
+            <StatCard icon={<Folder size={24} />} label="Jumlah Direktori" value="12" gradient="bg-gradient-to-br from-green-400 to-emerald-300" />
+            <StatCard icon={<Share2 size={24} />} label="Berkas Terbagi" value="5" gradient="bg-gradient-to-br from-purple-400 to-indigo-300" />
+            <StatCard icon={<HardDrive size={24} />} label="Kapasitas Tersisa" value="1.9 TB" gradient="bg-gradient-to-br from-yellow-400 to-orange-300" />
+          </>
+        )}
+      </motion.div>
+      
+      <motion.div 
+        className="grid grid-cols-1 lg:grid-cols-5 gap-8"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <div className="lg:col-span-3">
+          {isLoading ? <SkeletonStorage /> : <StorageVisualizer percentage={storagePercentage} />}
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-3">
-            {isLoading ? <SkeletonStorage /> : <StorageVisualizer percentage={storagePercentage} />}
-          </div>
-          <div className="lg:col-span-2">
-            {isLoading ? <SkeletonFiles /> : <FrequentlyAccessedFiles files={dummyFrequentFiles} />}
-          </div>
+        <div className="lg:col-span-2">
+          {isLoading ? <SkeletonFiles /> : <FrequentlyAccessedFiles files={dummyFrequentFiles} />}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
