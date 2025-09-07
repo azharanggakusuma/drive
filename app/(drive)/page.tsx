@@ -199,7 +199,7 @@ export default function BerandaPage() {
             Dashboard
           </h1>
           <p className="text-base md:text-lg text-slate-600 mt-3">
-            Selamat datang kembali! Ini ringkasan akun Anda.
+            Selamat datang kembali! Azharangga Kusuma.
           </p>
         </header>
 
