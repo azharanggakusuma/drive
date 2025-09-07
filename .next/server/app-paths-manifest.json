@@ -1,9 +1,4 @@
 {
-  "/(drive)/files/page": "app/(drive)/files/page.js",
   "/(drive)/page": "app/(drive)/page.js",
-  "/(drive)/recent/page": "app/(drive)/recent/page.js",
-  "/(drive)/settings/page": "app/(drive)/settings/page.js",
-  "/(drive)/shared/page": "app/(drive)/shared/page.js",
-  "/(drive)/starred/page": "app/(drive)/starred/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

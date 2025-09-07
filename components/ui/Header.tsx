@@ -34,21 +34,21 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
             <Plus size={20} /> Tambah Baru
           </button>
           <div className="hidden sm:flex items-center bg-gray-200 dark:bg-gray-800 p-1 rounded-full">
-            <button onClick={() => setViewMode('grid')} className={`p-2 rounded-full transition-colors ${viewMode === 'grid' ? 'bg-white dark:bg-gray-700 text-blue-500' : 'text-gray-500 hover:text-blue-500'}`}>
-              <LayoutGrid size={20} />
-            </button>
-            <button onClick={() => setViewMode('list')} className={`p-2 rounded-full transition-colors ${viewMode === 'list' ? 'bg-white dark:bg-gray-700 text-blue-500' : 'text-gray-500 hover:text-blue-500'}`}>
-              <List size={20} />
-            </button>
+              <button onClick={() => setViewMode('grid')} className={`p-2 rounded-full transition-colors ${viewMode === 'grid' ? 'bg-white dark:bg-gray-700 text-blue-500' : 'text-gray-500 hover:text-blue-500'}`}>
+                  <LayoutGrid size={20} />
+              </button>
+              <button onClick={() => setViewMode('list')} className={`p-2 rounded-full transition-colors ${viewMode === 'list' ? 'bg-white dark:bg-gray-700 text-blue-500' : 'text-gray-500 hover:text-blue-500'}`}>
+                  <List size={20} />
+              </button>
           </div>
           <UserCircle2 size={40} className="text-gray-500 cursor-pointer" />
         </div>
       </header>
 
       <div className="fixed sm:hidden bottom-6 right-6 z-40">
-        <button className="flex items-center justify-center w-14 h-14 bg-blue-600 rounded-full text-white shadow-lg hover:bg-blue-700 transition-all transform hover:scale-110">
-          <Plus size={28} />
-        </button>
+          <button className="flex items-center justify-center w-14 h-14 bg-blue-600 rounded-full text-white shadow-lg hover:bg-blue-700 transition-all transform hover:scale-110">
+              <Plus size={28} />
+          </button>
       </div>
     </>
   );

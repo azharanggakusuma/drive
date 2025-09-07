@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.0.0",
     "framer-motion": "^12.23.12",
     "googleapis": "^159.0.0",
     "lucide-react": "^0.542.0",

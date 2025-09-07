@@ -96,7 +96,7 @@ const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "bg-blue-500 h-1.5 rounded-full",
                     style: {
-                        width: "65%"
+                        width: "25%"
                     }
                 }, void 0, false, {
                     fileName: "[project]/components/ui/Sidebar.tsx",
@@ -110,7 +110,7 @@ const StorageStatus = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "text-xs text-gray-500 dark:text-gray-400",
-                children: "12,3 GB dari 20 GB digunakan"
+                children: "512 GB dari 2 TB digunakan"
             }, void 0, false, {
                 fileName: "[project]/components/ui/Sidebar.tsx",
                 lineNumber: 54,
@@ -458,12 +458,12 @@ const Header = (param)=>{
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/Header.tsx",
                                             lineNumber: 38,
-                                            columnNumber: 15
+                                            columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/Header.tsx",
                                         lineNumber: 37,
-                                        columnNumber: 13
+                                        columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>setViewMode('list'),
@@ -473,12 +473,12 @@ const Header = (param)=>{
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/Header.tsx",
                                             lineNumber: 41,
-                                            columnNumber: 15
+                                            columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/Header.tsx",
                                         lineNumber: 40,
-                                        columnNumber: 13
+                                        columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
@@ -515,12 +515,12 @@ const Header = (param)=>{
                     }, void 0, false, {
                         fileName: "[project]/components/ui/Header.tsx",
                         lineNumber: 50,
-                        columnNumber: 11
+                        columnNumber: 15
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/ui/Header.tsx",
                     lineNumber: 49,
-                    columnNumber: 9
+                    columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/ui/Header.tsx",
