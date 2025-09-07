@@ -198,7 +198,7 @@ export default function BerandaPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 p-4 sm:p-6 md:p-8">
+    <div className="min-h-screen bg-slate-50 text-slate-800">
       <div
         className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 via-white to-green-50 -z-10"
         style={{
