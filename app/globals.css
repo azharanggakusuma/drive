@@ -17,13 +17,14 @@
   --border-color: #e2e8f0;
   --primary-color: #3b82f6;
   --primary-hover: #2563eb;
-  --primary-text: #1e293b;
-  --secondary-text: #64748b;
+  --primary-text: #1e293b;     /* slate-800 */
+  --secondary-text: #64748b;   /* slate-500 */
   --success-color: #22c55e;
   --danger-color: #ef4444;
   --warning-color: #f59e0b;
-  --muted-bg: #f1f5f9;
-  --card-bg: #ffffff;
+  --muted-bg: #f1f5f9;         /* slate-100 */
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(230, 230, 230, 0.8);
 }
 
 body {
@@ -37,4 +38,19 @@ body {
 h1, h2, h3 {
   font-family: var(--font-geist-sans), sans-serif;
   font-weight: 600;
+}
+
+.background-beams {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3), transparent),
+    radial-gradient(ellipse 80% 50% at 50% 120%, rgba(90, 190, 240, 0.3), transparent);
+  -webkit-mask-image: radial-gradient(ellipse 50% 100% at center, black, transparent);
+  mask-image: radial-gradient(ellipse 50% 100% at center, black, transparent);
+  pointer-events: none;
+  z-index: -1;
 }
