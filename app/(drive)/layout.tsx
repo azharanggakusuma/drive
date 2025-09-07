@@ -15,7 +15,7 @@ export default function DriveLayout({
 
   return (
     <ViewProvider>
-      <div className="flex h-screen w-full bg-gray-100 dark:bg-black overflow-hidden">
+      <div className="flex h-screen w-full bg-slate-50 dark:bg-black overflow-hidden">
         <div className="hidden lg:block flex-shrink-0">
           <Sidebar />
         </div>
