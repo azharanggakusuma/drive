@@ -1,4 +1,5 @@
 {
+  "/(drive)/files/page": "app/(drive)/files/page.js",
   "/(drive)/page": "app/(drive)/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
