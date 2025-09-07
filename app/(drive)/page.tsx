@@ -30,24 +30,24 @@ interface FrequentFile {
 const dummyFrequentFiles: FrequentFile[] = [
   {
     id: 1,
-    icon: <Presentation size={22} className="text-orange-500" />,
-    name: "Presentasi_Q3.pptx",
+    icon: <Presentation size={20} className="text-orange-500" />,
+    name: "Presentasi Kinerja Kuartal 3.pptx",
     size: "3.4 MB",
-    lastAccessed: "Hari ini, 10:30",
+    lastAccessed: "Baru saja, 10:30",
   },
   {
     id: 2,
-    icon: <FileText size={22} className="text-red-500" />,
-    name: "Laporan_Bulanan.pdf",
+    icon: <FileText size={20} className="text-red-500" />,
+    name: "Laporan Penjualan Bulanan.pdf",
     size: "1.2 MB",
-    lastAccessed: "Kemarin, 15:45",
+    lastAccessed: "Kemarin sore, 15:45",
   },
   {
     id: 3,
-    icon: <FileSpreadsheet size={22} className="text-green-600" />,
-    name: "Data_Keuangan.xlsx",
+    icon: <FileSpreadsheet size={20} className="text-green-600" />,
+    name: "Analisis Keuangan Tahunan.xlsx",
     size: "876 KB",
-    lastAccessed: "2 hari yang lalu",
+    lastAccessed: "Jumat, 14:20",
   },
 ];
 
@@ -99,8 +99,8 @@ const StatCard: React.FC<StatCardProps> = ({ icon, label, value, gradient }) => 
     <div className="relative z-10">
       <div className="p-3 bg-slate-100 rounded-lg inline-block text-slate-700">{icon}</div>
       <div className="mt-4">
-        <p className="text-3xl sm:text-4xl font-bold text-slate-800">{value}</p>
-        <p className="text-sm sm:text-md text-slate-700 font-medium mt-1">{label}</p>
+        <p className="text-2xl sm:text-3xl font-bold text-slate-800">{value}</p>
+        <p className="text-sm text-slate-600 font-medium mt-1">{label}</p>
       </div>
     </div>
   </div>
@@ -108,9 +108,9 @@ const StatCard: React.FC<StatCardProps> = ({ icon, label, value, gradient }) => 
 
 const StorageVisualizer = ({ percentage }: { percentage: number }) => (
   <div className="lg:col-span-2 bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-xl">
-    <h2 className="text-xl md:text-2xl font-semibold mb-6 text-slate-800">Penggunaan Penyimpanan</h2>
+    <h2 className="text-lg md:text-xl font-semibold mb-6 text-slate-800">Visualisasi Penyimpanan</h2>
     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-      <div className="relative w-28 h-28 sm:w-36 sm:h-36 flex-shrink-0">
+      <div className="relative w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0">
         <svg className="w-full h-full" viewBox="0 0 36 36">
           <path
             d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -129,13 +129,13 @@ const StorageVisualizer = ({ percentage }: { percentage: number }) => (
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <p className="text-2xl sm:text-3xl font-bold text-slate-800">{percentage}%</p>
-          <p className="text-sm text-slate-500">terpakai</p>
+          <p className="text-xl sm:text-2xl font-bold text-slate-800">{percentage}%</p>
+          <p className="text-xs text-slate-500">terpakai</p>
         </div>
       </div>
       <div className="flex-1 text-center md:text-left">
-        <p className="text-base md:text-lg text-slate-600">
-          Anda telah memakai <span className="font-bold text-slate-900">512 GB</span> dari{" "}
+        <p className="text-base text-slate-600">
+          Anda telah menggunakan <span className="font-bold text-slate-900">512 GB</span> dari total{" "}
           <span className="font-bold text-slate-900">2 TB</span>.
         </p>
       </div>
@@ -146,9 +146,9 @@ const StorageVisualizer = ({ percentage }: { percentage: number }) => (
 const FrequentlyAccessedFiles = ({ files }: { files: FrequentFile[] }) => (
   <div className="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-xl">
     <div className="flex justify-between items-center mb-6">
-      <h2 className="text-xl md:text-2xl font-semibold text-slate-800">Sering Diakses</h2>
+      <h2 className="text-lg md:text-xl font-semibold text-slate-800">Akses Cepat Berkas</h2>
       <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center group flex-shrink-0">
-        Lihat Semua <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+        Tampilkan Semua <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
     <ul className="space-y-4">
@@ -157,7 +157,7 @@ const FrequentlyAccessedFiles = ({ files }: { files: FrequentFile[] }) => (
           <div className="mr-4 flex-shrink-0 bg-slate-100 p-2.5 rounded-lg">{file.icon}</div>
           <div className="flex-1 min-w-0">
             <p className="text-sm text-slate-800 font-semibold truncate">{file.name}</p>
-            <p className="text-xs text-slate-500 mt-1">{`Diakses: ${file.lastAccessed}`}</p>
+            <p className="text-xs text-slate-500 mt-1">{`Terakhir diakses: ${file.lastAccessed}`}</p>
           </div>
            <p className="text-sm text-slate-600 font-medium ml-4 flex-shrink-0">{file.size}</p>
         </li>
@@ -180,7 +180,7 @@ export default function BerandaPage() {
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-800 p-4 sm:p-6 md:p-8">
+    <div className="min-h-screen bg-slate-50 text-slate-800 p-4 sm:p-6 md:p-8">
       <style jsx global>{`
         @keyframes fadeInUp {
           from {
@@ -193,13 +193,13 @@ export default function BerandaPage() {
           }
         }
       `}</style>
-      <div className="mx-auto">
+      <div className="max-w-7xl mx-auto">
         <header className="mb-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-            Dashboard
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+            Dasbor Utama
           </h1>
-          <p className="text-base md:text-lg text-slate-600 mt-3">
-            Selamat datang kembali! Azharangga Kusuma.
+          <p className="text-base text-slate-600 mt-2">
+            Senang melihat Anda kembali, Azharangga Kusuma!
           </p>
         </header>
 
@@ -213,10 +213,10 @@ export default function BerandaPage() {
             </>
           ) : (
             <>
-              <StatCard icon={<File size={28} />} label="Total File" value="1,234" gradient="bg-gradient-to-br from-blue-400 to-cyan-300" />
-              <StatCard icon={<Folder size={28} />} label="Total Folder" value="56" gradient="bg-gradient-to-br from-green-400 to-emerald-300" />
-              <StatCard icon={<Share2 size={28} />} label="File Dibagikan" value="78" gradient="bg-gradient-to-br from-purple-400 to-indigo-300" />
-              <StatCard icon={<HardDrive size={28} />} label="Penyimpanan" value="512 GB" gradient="bg-gradient-to-br from-yellow-400 to-orange-300" />
+              <StatCard icon={<File size={24} />} label="Total Berkas" value="1,234" gradient="bg-gradient-to-br from-blue-400 to-cyan-300" />
+              <StatCard icon={<Folder size={24} />} label="Jumlah Direktori" value="56" gradient="bg-gradient-to-br from-green-400 to-emerald-300" />
+              <StatCard icon={<Share2 size={24} />} label="Berkas Terbagi" value="78" gradient="bg-gradient-to-br from-purple-400 to-indigo-300" />
+              <StatCard icon={<HardDrive size={24} />} label="Kapasitas Tersisa" value="1.488 TB" gradient="bg-gradient-to-br from-yellow-400 to-orange-300" />
             </>
           )}
         </div>
