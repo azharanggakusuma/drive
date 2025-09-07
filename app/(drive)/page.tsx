@@ -112,7 +112,7 @@ const StatCard: React.FC<StatCardProps> = ({ icon, label, value, gradient }) => 
 
 const StorageVisualizer = ({ percentage }: { percentage: number }) => (
   <div className="h-full bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col">
-    <h2 className="text-lg md:text-xl font-semibold mb-6 text-slate-800">Visualisasi Penyimpanan</h2>
+    <h2 className="text-lg md:text-xl font-semibold mb-6 text-slate-800">Kapasitas Penyimpanan</h2>
     <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
       <div className="relative w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0">
         <svg className="w-full h-full" viewBox="0 0 36 36">
